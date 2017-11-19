@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 单机版连接池 -->
+	<bean class="redis.clients.jedis.JedisPool">
+		<!-- 配置单机版redis的ip地址 -->
+		<constructor-arg name="host" value="${jedis.host}" />
+		<!-- 配置单机版redis的端口号 -->
+		<constructor-arg name="port" value="${jedis.port}" />
+	</bean>
+
+	<!-- 集群版的连接对象 -->
+	<bean class="redis.clients.jedis.JedisCluster">
+		<constructor-arg name="nodes">
+			<set>
+				<!-- 配置节点的信息 -->
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="${cluster.host1}" />
+					<constructor-arg name="port" value="${cluster.port1}" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="${cluster.host2}" />
+					<constructor-arg name="port" value="${cluster.port2}" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="${cluster.host3}" />
+					<constructor-arg name="port" value="${cluster.port3}" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="${cluster.host4}" />
+					<constructor-arg name="port" value="${cluster.port4}" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="${cluster.host5}" />
+					<constructor-arg name="port" value="${cluster.port5}" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="${cluster.host6}" />
+					<constructor-arg name="port" value="${cluster.port6}" />
+				</bean>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<!-- 配置单机版实现类 -->
+	<!-- <bean class="com.taotao.manager.redis.impl.RedisPool" /> -->
+
+	<!-- 配置集群版实现类 -->
+	<bean class="com.taotao.manager.redis.impl.RedisCluster" />
+
+</beans>

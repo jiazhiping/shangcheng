@@ -1,0 +1,4 @@
+com\taotao\manager\mapper\ItemMapper.class
+com\taotao\manager\mapper\ItemDescMapper.class
+com\taotao\manager\mapper\TestMapper.class
+com\taotao\manager\mapper\ItemCatMapper.class

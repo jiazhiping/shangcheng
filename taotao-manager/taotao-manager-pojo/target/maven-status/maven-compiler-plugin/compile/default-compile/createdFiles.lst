@@ -1,0 +1,10 @@
+com\taotao\manager\pojo\ItemCat.class
+com\taotao\manager\pojo\OrderShipping.class
+com\taotao\manager\pojo\Content.class
+com\taotao\manager\pojo\OrderItem.class
+com\taotao\manager\pojo\User.class
+com\taotao\manager\pojo\ContentCategory.class
+com\taotao\manager\pojo\Item.class
+com\taotao\manager\pojo\Order.class
+com\taotao\manager\pojo\BasePojo.class
+com\taotao\manager\pojo\ItemDesc.class
