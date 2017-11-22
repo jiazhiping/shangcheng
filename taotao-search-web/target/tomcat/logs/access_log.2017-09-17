@@ -1,0 +1,2 @@
+127.0.0.1 - - [17/Sep/2017:18:23:26 +0800] "GET /search.html HTTP/1.0" 404 949 http-bio-8089-exec-1 226
+127.0.0.1 - - [17/Sep/2017:18:23:26 +0800] "GET /favicon.ico HTTP/1.0" 404 973 http-bio-8089-exec-2 1
