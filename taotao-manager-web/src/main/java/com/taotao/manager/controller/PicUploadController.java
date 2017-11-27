@@ -61,7 +61,7 @@ public class PicUploadController {
 			}
 		}
 
-		// 椒盐失败 返回
+		// 校验失败 返回
 		if (flag == false) {
 			// 如果校验失败，直接返回
 			// return picUploadResult;

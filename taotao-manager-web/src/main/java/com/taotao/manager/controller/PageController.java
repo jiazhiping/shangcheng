@@ -17,7 +17,7 @@ import com.taotao.manager.service.ItemCatService;
 
 @Controller
 @RequestMapping("page")
-public class PageController {
+class PageController {
 
 	@RequestMapping("{pageName}")
 	public String toPage(@PathVariable("pageName") String pageName){
